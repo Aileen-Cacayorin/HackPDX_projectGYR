@@ -13,14 +13,20 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if teacher_signed_in? %>
-          <h3>signed in</h3>
-        <% else %>
+      <% if teacher_signed_in? %>
+        <ul class="nav navbar-nav navbar-left">
+          <li><%=link_to 'My Students', teacher_students_path(current_teacher)%></li>
+          <li><%=link_to "Log Out", destroy_teacher_session_path, method: :delete %></li>
+        </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <p>signed in as <%=current_teacher.full_name%><p>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Sign up', new_teacher_registration_path %></li>
           <li> <%= link_to "Sign In", new_teacher_session_path %> </li>
-        <% end %>
-      </ul>
+        </ul>
+      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
