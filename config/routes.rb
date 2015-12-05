@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   devise_for :teachers
 
+  resources :parents do
+    resources :students
+  end
+
+  resources :students do
+    resources :reports
+  end
+
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
