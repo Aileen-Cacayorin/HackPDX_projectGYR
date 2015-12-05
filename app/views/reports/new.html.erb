@@ -1,14 +1,5 @@
 <h1>Create new report</h1>
 
-<%= form_for @teacher do |f| %>
-  <%= f.fields_for :reports, [Report.new] * @teacher.students.count do |report| %>
-    <%= report.label :status %>
-    <%= report.check_box :status %>
-  <% end %>
-  <%= f.submit %>
-<% end %>
-
-
 <%= form_tag "/reports" do %>
   <div class="form-group">
     <%= label_tag 'report[][daily_summary]', "Daily Summary" %>
@@ -20,16 +11,17 @@
   </div>
   <% @teacher.students.each do |student| %>
     <h4><%= student.first_name %></h4>
-    <%= radio_button_tag "student#{student.id}[][color]", "green" %>
-    <%= radio_button_tag "student#{student.id}[][color]", "yellow" %>
-    <%= radio_button_tag "student#{student.id}[][color]", "red" %>
+    <%= hidden_field_tag "#{student.id}[][student_id]", "#{student.id}" %>
+    <%= radio_button_tag "#{student.id}[][color]", "green" %>
+    <%= radio_button_tag "#{student.id}[][color]", "yellow" %>
+    <%= radio_button_tag "#{student.id}[][color]", "red" %>
     <br>
-    <%= radio_button_tag "student#{student.id}[][status]", "tardy" %>
-    <%= radio_button_tag "student#{student.id}[][status]", "absent" %>
+    <%= radio_button_tag "#{student.id}[][status]", "tardy" %>
+    <%= radio_button_tag "#{student.id}[][status]", "absent" %>
     <br>
     <div class="form-group">
-      <%= label_tag 'student#{student.id}[][comment]', "Comment" %>
-      <%= text_area_tag "student#{student.id}[][comment]" %>
+      <%= label_tag '#{student.id}[][comments]', "Comment" %>
+      <%= text_area_tag "#{student.id}[][comments]" %>
     </div>
     <hr>
   <% end %>
