@@ -1,14 +1,4 @@
 <h1>Create new report</h1>
-
-<%= form_for @teacher do |f| %>
-  <%= f.fields_for :reports, [Report.new] * @teacher.students.count do |report| %>
-    <%= report.label :status %>
-    <%= report.check_box :status %>
-  <% end %>
-  <%= f.submit %>
-<% end %>
-
-
 <%= form_tag "/reports" do %>
   <div class="form-group">
     <%= label_tag 'report[][daily_summary]', "Daily Summary" %>
