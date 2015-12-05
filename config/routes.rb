@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :teachers, only: [:show] do
-    resources :reports, only: [:new, :create]
+    resources :reports, only: [:index, :new, :create]
   end
 
 

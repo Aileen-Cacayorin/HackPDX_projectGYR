@@ -1,6 +1,6 @@
 <h1>Create new report</h1>
 
-<%= form_for @teacher do |f| %>
+<%= form_for (@teacher )do |f| %>
   <%= f.fields_for :reports, [Report.new]*10 do |report| %>
     <%= report.label :status %>
     <%= report.text_field :status %>
