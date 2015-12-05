@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :reports, only: [:new, :create]
   end
 
+  resources :reports
+
 
   root to: "reports#new"
 
