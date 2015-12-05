@@ -4,4 +4,6 @@ class Teacher < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :students
+  has_many :reports
+  accepts_nested_attributes_for :reports
 end
