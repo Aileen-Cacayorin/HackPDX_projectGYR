@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :teachers
 
-  root to: "home#index"
+  resources :teachers, only: [:show]
+
+  resources :reports
+
+
+  root to: "reports#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
