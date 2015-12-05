@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     resources :students
   end
 
-  resources :students do
-    resources :reports
+  resources :teachers, only: [:show] do
+    resources :reports, only: [:new, :create]
   end
 
-  root to: "home#index"
+
+  root to: "reports#new"
+
 end
