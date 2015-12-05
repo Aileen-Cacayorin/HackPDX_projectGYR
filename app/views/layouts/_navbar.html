@@ -15,7 +15,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if teacher_signed_in? %>
-          <h3>signed in</h3>
+          <h3> <%= current_teacher.first_name %> <%= current_teacher.last_name %> </h3>
+          <li><%= link_to 'Sign out', destroy_teacher_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign up', new_teacher_registration_path %></li>
           <li> <%= link_to "Sign In", new_teacher_session_path %> </li>

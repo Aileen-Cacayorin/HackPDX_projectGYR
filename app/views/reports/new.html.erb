@@ -1,24 +1,9 @@
 <h1>Create new report</h1>
 
-<%= form_for @report do |f| %>
-  <div class="form-group">
-    <%= f.label :daily_summary %>
-    <%= f.text_field(:daily_summary, {:class => 'form-control', :required => 'true'}) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :homework %>
-    <%= f.text_field(:homework, {:class => 'form-control', :required => 'true'}) %>
-  </div>
-  <% prefix = "students[]" %>
-  <% @teacher.students.each do |student| %>
-    <%= f.fields_for prefix, option do |option_form| %>
-      <%= option_form.label :color %>
-      <%= option_form.text_field :color %>
-      <%= option_form.label :status %>
-      <%= option_form.text_field :status %>
-      <br>
-    <% end %>
+<%= form_for @teacher do |f| %>
+  <%= f.fields_for :reports, [Report.new]*10 do |report| %>
+    <%= report.label :status %>
+    <%= report.text_field :status %>
   <% end %>
-  <hr>
-  <button type="submit" class="btn btn-default">Send Reports</button>
+  <%= f.submit %>
 <% end %>
