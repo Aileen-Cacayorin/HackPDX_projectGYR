@@ -1,9 +1,29 @@
 <h1>Create new report</h1>
 
-<%= form_for (@teacher )do |f| %>
-  <%= f.fields_for :reports, [Report.new]*10 do |report| %>
-    <%= report.label :status %>
-    <%= report.text_field :status %>
+<%= form_tag "/reports" do %>
+  <div class="form-group">
+    <%= label_tag 'report[][daily_summary]', "Daily Summary" %>
+    <%= text_area_tag "report[][daily_summary]" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'report[][homework]', "Homework" %>
+    <%= text_area_tag "report[][homework]" %>
+  </div>
+  <% @teacher.students.each do |student| %>
+    <h4><%= student.first_name %></h4>
+    <%= hidden_field_tag "#{student.id}[][student_id]", "#{student.id}" %>
+    <%= radio_button_tag "#{student.id}[][color]", "green" %>
+    <%= radio_button_tag "#{student.id}[][color]", "yellow" %>
+    <%= radio_button_tag "#{student.id}[][color]", "red" %>
+    <br>
+    <%= radio_button_tag "#{student.id}[][status]", "tardy" %>
+    <%= radio_button_tag "#{student.id}[][status]", "absent" %>
+    <br>
+    <div class="form-group">
+      <%= label_tag '#{student.id}[][comments]', "Comment" %>
+      <%= text_area_tag "#{student.id}[][comments]" %>
+    </div>
+    <hr>
   <% end %>
-  <%= f.submit %>
+  <%= submit_tag "Submit" %>
 <% end %>
