@@ -1,7 +1,12 @@
 <h1>My Students</h1>
+<%= link_to "Add New Student", new_teacher_student_path(@teacher)%>
 
 <% if @students.any? %>
-  <h2>Student list will go here</h2>
+  <ul>
+  <% @students.each do |student| %>
+    <li> <%= student.full_name %></li>
+  <% end %>
+  </ul>
 <% else %>
 <h2>No students yet</h2>
 <% end %>
