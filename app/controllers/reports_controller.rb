@@ -20,6 +20,7 @@ class ReportsController < ApplicationController
       status = params[student.id.to_s].first["status"] || nil
       comments = params[student.id.to_s].first["comments"] || nil
       Report.create({student_id: student.id, color: color, status: status, comments: comments, daily_summary: daily_summary, homework: homework, date: date, teacher: @teacher})
+      TeacherMailer.daily_report(student).deliver
     end
     redirect_to reports_path
   end
