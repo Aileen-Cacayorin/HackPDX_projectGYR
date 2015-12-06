@@ -1,6 +1,6 @@
 #GYR (Green, Yellow, and Red)
 
-####Version 1.0, November, 15, 2015
+####Version 1.0, December, 5, 2015
 By Aileen Cacayorin, Shannon Mulloy, Caterina Paun, and Austin Kincaid
 
 ###Description
