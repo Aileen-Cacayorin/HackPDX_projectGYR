@@ -4,7 +4,8 @@
 
 <p><strong> Here's how <%= @student.full_name %> did today:</strong> </p>
   <%= image_tag attachments[@report.color + '.png'].url %>
-  <p> Comments: <%= @report.comments %></p>
+
+  <p><strong>Comments: <%= @report.comments %><strong></p>
 
 
 <p><strong>Today's daily class summary:</strong></p>
