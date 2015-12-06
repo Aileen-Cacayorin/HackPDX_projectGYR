@@ -117,6 +117,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailgunner (2.2.1)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
@@ -258,6 +259,7 @@ DEPENDENCIES
   jquery-turbolinks
   launchy
   letter_opener
+  mailgunner
   pg
   poltergeist
   pry
