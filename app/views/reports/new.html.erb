@@ -1,28 +1,51 @@
-<h1>Create new report</h1>
-<%= form_tag "/reports" do %>
-  <div class="form-group">
-    <%= label_tag 'report[][daily_summary]', "Daily Summary" %>
-    <%= text_area_tag "report[][daily_summary]" %>
+
+<div class="container">
+  <div class="container well">
+    <h1>Report for <%= Date.today.strftime("%A, %B %y") %></h1>
+
+    <%= form_tag "/reports" do %>
+      <div class="form-group">
+        <%= label_tag 'report[][daily_summary]', "Daily Summary" %>
+        <%= text_area_tag "report[][daily_summary]", nil, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag 'report[][homework]', "Today's Homework" %>
+        <%= text_area_tag "report[][homework]", nil, class: "form-control" %>
+      </div>
+      <br>
+      <p class="btn btn-warning">Attach Files</p>
+      <hr>
+      <% @teacher.students.each do |student| %>
+        <div class="col-lg-12">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <h4><%= student.first_name %></h4>
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <span class="color" id="green">
+              <%= radio_button_tag "#{student.id}[][color]", "green" %>
+            </span>
+            <span class="color" id="yellow">
+              <%= radio_button_tag "#{student.id}[][color]", "yellow" %>
+            </span>
+            <span class="color" id="red">
+              <%= radio_button_tag "#{student.id}[][color]", "red" %>
+            </span>
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <span class="status" id="tardy">
+              <%= radio_button_tag "#{student.id}[][status]", "tardy" %>
+            </span>
+            <span class="status" id="absent">
+              <%= radio_button_tag "#{student.id}[][status]", "absent" %>
+            </span>
+          </div>
+          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <%= text_area_tag "#{student.id}[][comment]", nil, class: "form-control", placeholder: "Comments" %>
+          </div>
+          <hr>
+        </div>
+      <% end %>
+      <%= submit_tag "Submit", class: "btn btn-warning center-block" %>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= label_tag 'report[][homework]', "Homework" %>
-    <%= text_area_tag "report[][homework]" %>
-  </div>
-  <% @teacher.students.each do |student| %>
-    <h4><%= student.first_name %></h4>
-    <%= hidden_field_tag "#{student.id}[][student_id]", "#{student.id}" %>
-    <%= radio_button_tag "#{student.id}[][color]", "green" %>
-    <%= radio_button_tag "#{student.id}[][color]", "yellow" %>
-    <%= radio_button_tag "#{student.id}[][color]", "red" %>
-    <br>
-    <%= radio_button_tag "#{student.id}[][status]", "tardy" %>
-    <%= radio_button_tag "#{student.id}[][status]", "absent" %>
-    <br>
-    <div class="form-group">
-      <%= label_tag '#{student.id}[][comments]', "Comment" %>
-      <%= text_area_tag "#{student.id}[][comments]" %>
-    </div>
-    <hr>
-  <% end %>
-  <%= submit_tag "Submit" %>
-<% end %>
+</div>

@@ -13,3 +13,31 @@
 */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .color, .status {
+   padding: 10%;
+ }
+
+#green {
+  background-color: green;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#red {
+  background-color: red;
+}
+
+#tardy {
+  background-color: gray;
+}
+
+#absent {
+  background-color: black;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
