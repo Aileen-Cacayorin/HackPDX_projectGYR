@@ -21,7 +21,7 @@ class ReportsController < ApplicationController
       comments = params[student.id.to_s].first["comments"] || nil
       Report.create({student_id: student.id, color: color, status: status, comments: comments, daily_summary: daily_summary, homework: homework, date: date, teacher: @teacher})
     end
-    redirect_to reports_path
+    redirect_to teacher_students_path(@teacher)
   end
 
 
