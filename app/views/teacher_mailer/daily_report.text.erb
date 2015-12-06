@@ -1,3 +1,19 @@
-TeacherMailer#daily_report
+<h1>Daily Report</h1>
 
-<%= @greeting %>, find me in app/views/teacher_mailer/daily_report.text.erb
+<h3>Dear Parent,</h3>
+
+<p><strong> Here's how <%= @student.full_name %> did today:</strong> </p>
+  <%= image_tag attachments[@report.color + '.png'].url %>
+  <p> Comments: <%= @report.comments %></p>
+
+
+<p><strong>Today's daily class summary:</strong></p>
+<p> <%= @report.daily_summary %> </p>
+
+
+<p><strong> Tonight's Homework:</strong></p>
+<p> <%= @report.homework %></p>
+
+
+<p>Best,</p>
+<p><%= @teacher.full_name %></p>
