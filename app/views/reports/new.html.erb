@@ -11,7 +11,8 @@
         <%= label_tag 'report[][homework]', "Today's Homework" %>
         <%= text_area_tag "report[][homework]", nil, class: "form-control" %>
       </div>
-        <p class="btn btn-warning">Attach Files</p>
+      <br>
+      <p class="btn btn-warning">Attach Files</p>
       <hr>
       <% @teacher.students.each do |student| %>
         <div class="col-lg-12">
