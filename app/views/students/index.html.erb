@@ -8,13 +8,30 @@
           <h4><%= student.first_name %> <%= student.last_name %></h4>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-          <h4><%=student.reports.where(color: "green").count%> <%=student.reports.where(color: "yellow").count%> <%=student.reports.where(color: "red").count%></h4>
+          <h4>
+            <span class="color" id="green">
+              <%=student.reports.where(color: "green").count%>
+            </span>
+            <span class="color" id="yellow">
+             <%=student.reports.where(color: "yellow").count%>
+            </span>
+            <span class="color" id="red">
+              <%=student.reports.where(color: "red").count%>
+            </span>
+          </h4>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-          <h4><%=student.reports.where(status: "tardy").count%> <%=student.reports.where(status: "absent").count%></h4>
+          <h4>
+            <span class="status" id="tardy">
+              <%=student.reports.where(status: "tardy").count%>
+            </span>
+            <span class="status" id="absent">
+              <%=student.reports.where(status: "absent").count%>
+            </span>
+          </h4>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-          <button class="btn btn-warning">Detailed Report</button>
+          <%= link_to "Detailed Report", teacher_student_path(@teacher, student), class: "btn btn-warning"%>
         </div>
         <div class="clearfix"></div>
       <% end %>
