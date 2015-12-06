@@ -5,9 +5,11 @@ class TeacherMailer < ApplicationMailer
   #
   #   en.teacher_mailer.daily_report.subject
   #
-  def daily_report(student)
+  def daily_report(student, report, teacher)
     @greeting = "Hi"
-    student = student
-    mail to: student.parent_email, subject: "Today's Report"
+    @student = student
+    @report = report
+    @teacher = teacher
+    mail to: @student.parent_email, subject: "Today's Report"
   end
 end
