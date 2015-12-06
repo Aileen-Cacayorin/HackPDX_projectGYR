@@ -22,9 +22,7 @@ class ReportsController < ApplicationController
       report = Report.create({student_id: student.id, color: color, status: status, comments: comments, daily_summary: daily_summary, homework: homework, date: date, teacher: @teacher})
       TeacherMailer.daily_report(student, report, @teacher).deliver
     end
-    redirect_to reports_path
+    redirect_to teacher_students_path(@teacher)
   end
-
-
 
 end

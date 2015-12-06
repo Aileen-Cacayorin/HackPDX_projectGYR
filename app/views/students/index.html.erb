@@ -1,12 +1,42 @@
-<h1>My Students</h1>
-<%= link_to "Add New Student", new_teacher_student_path(@teacher)%>
-
-<% if @students.any? %>
-  <ul>
-  <% @students.each do |student| %>
-    <li> <%= student.full_name %></li>
-  <% end %>
-  </ul>
-<% else %>
-<h2>No students yet</h2>
-<% end %>
+<div class="container">
+  <h1><%= @teacher.first_name %>'s Students</h1>
+  <%= link_to "Add New Student", new_teacher_student_path(@teacher)%>
+  <div class="container well">
+    <% if @students.any? %>
+      <% @students.each do |student| %>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <h4><%= student.first_name %> <%= student.last_name %></h4>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <h4>
+            <span class="color" id="green">
+              <%=student.reports.where(color: "green").count%>
+            </span>
+            <span class="color" id="yellow">
+             <%=student.reports.where(color: "yellow").count%>
+            </span>
+            <span class="color" id="red">
+              <%=student.reports.where(color: "red").count%>
+            </span>
+          </h4>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <h4>
+            <span class="status" id="tardy">
+              <%=student.reports.where(status: "tardy").count%>
+            </span>
+            <span class="status" id="absent">
+              <%=student.reports.where(status: "absent").count%>
+            </span>
+          </h4>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <%= link_to "Detailed Report", teacher_student_path(@teacher, student), class: "btn btn-warning"%>
+        </div>
+        <div class="clearfix"></div>
+      <% end %>
+    <% else %>
+    <h2>No students yet</h2>
+    <% end %>
+  </div>
+</div>

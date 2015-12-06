@@ -1,6 +1,11 @@
 class StudentsController < ApplicationController
   before_filter :authenticate_teacher!
 
+  def show
+    @student = Student.find(params[:id])
+    @reports = @student.reports
+  end
+
   def index
     @teacher = current_teacher
     @students = @teacher.students
