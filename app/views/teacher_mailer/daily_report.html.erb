@@ -1,5 +1,19 @@
-<h1>TeacherMailer#daily_report</h1>
+<h1>Daily Report</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/teacher_mailer/daily_report.html.erb
-</p>
+<h3>Dear Parent,</h3>
+
+<p class="lead"><strong> Here's how <%= @student.full_name %> did today:</strong> </p>
+  <p> Light Color<%= @report.color %></p>
+  <p> Comments: <%= @report.comments %></p>
+
+
+<p class="lead"><strong>Today's daily class summary:</strong></p>
+<p> <%= @report.daily_summary %> </p>
+
+
+<p class="lead"><strong> Tonight's Homework:</strong></p>
+<p> <%= @report.homework %></p>
+
+
+<p>Best,</p>
+<p><%= @teacher.full_name %></p>
