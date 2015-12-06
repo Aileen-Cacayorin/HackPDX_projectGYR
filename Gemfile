@@ -13,6 +13,8 @@ gem "font-awesome-rails"
 gem 'devise'
 gem "hirb"
 gem 'jquery-turbolinks'
+gem 'mailgunner'
+gem 'rest-client'
 
 group :production do
   gem 'puma'
