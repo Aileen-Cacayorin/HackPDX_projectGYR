@@ -1,0 +1,26 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: root_path} GYR
+    .div.collapse.navbar-collapse#bs-example-navbar-collapse-1
+      - if teacher_signed_in?
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            =link_to teacher_class_groups_path(current_teacher) do
+              My classes
+          %li
+            =link_to destroy_teacher_session_path, method: :delete do
+              Log Out
+      - else
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            =link_to new_teacher_registration_path do
+              Sign up
+          %li
+            =link_to new_teacher_session_path do
+              Sign in
