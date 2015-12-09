@@ -2,16 +2,12 @@ Rails.application.routes.draw do
   devise_for :teachers
 
   resources :teachers do
-    resources :students
+    resources :class_groups
   end
 
-  resources :teachers, only: [:show] do
-    resources :reports, only: [:index, :new, :create]
+  resources :class_groups do
+    resources :daily_summaries
   end
 
-  resources :reports
-
-
-  root to: "reports#new"
-
+  root to: "class_groups#index"
 end

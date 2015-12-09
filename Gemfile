@@ -15,6 +15,7 @@ gem "hirb"
 gem 'jquery-turbolinks'
 gem 'mailgunner'
 gem 'rest-client'
+gem 'haml'
 
 group :production do
   gem 'puma'
