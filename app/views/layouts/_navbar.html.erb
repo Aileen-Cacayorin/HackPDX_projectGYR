@@ -15,12 +15,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if teacher_signed_in? %>
         <ul class="nav navbar-nav navbar-left">
-          <li><%=link_to 'My Students', teacher_students_path(current_teacher)%></li>
-          <li><%= link_to "Reports", teacher_reports_path(current_teacher) %> </li>
+          <li><%=link_to 'My classes', teacher_class_groups_path(current_teacher)%></li>
           <li><%=link_to "Log Out", destroy_teacher_session_path, method: :delete %></li>
-        </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <p>signed in as <%=current_teacher.full_name%><p>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
