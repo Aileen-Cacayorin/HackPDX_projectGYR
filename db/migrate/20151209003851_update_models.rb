@@ -49,7 +49,7 @@ class UpdateModels < ActiveRecord::Migration
     end
 
     create_table :daily_reports do |t|
-      t.integer :daily_report_id
+      t.integer :daily_summary_id
       t.timestamps null: false
     end
 

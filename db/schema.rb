@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20151209003851) do
   end
 
   create_table "daily_reports", force: :cascade do |t|
-    t.integer  "daily_report_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "daily_summary_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "daily_summaries", force: :cascade do |t|
