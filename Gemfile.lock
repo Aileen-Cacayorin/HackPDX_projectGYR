@@ -271,10 +271,7 @@ DEPENDENCIES
   jquery-turbolinks
   launchy
   letter_opener
-<<<<<<< HEAD
-=======
   mailgunner
->>>>>>> master
   pg
   poltergeist
   pry
@@ -293,6 +290,3 @@ DEPENDENCIES
   web-console
   will_paginate
   will_paginate-bootstrap
-
-BUNDLED WITH
-   1.10.6

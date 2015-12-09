@@ -6,7 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-teacher = Teacher.create(first_name: 'Sam', last_name: "Trillest", email: "sam@whittier.edu", password: "education")
+teacher = Teacher.create(first_name: 'Sam', last_name: "Teacher", email: "aokincaid@gmail.com", password: "education")
+
+class_group = teacher.class_groups.create(name: "general")
 
 students = [
   ["Aileen", "Cacayorin", "acacayorin@gmail.com"],
@@ -15,6 +17,6 @@ students = [
   ["Caterina", "Paun", "caterina.paun@gmail.com"]
 ]
 
-students.each do |first, last, email|
-  teacher.students.create(first_name: first, last_name: last, parent_email: email, teacher_id: teacher.id)
+students.each do |first, last, parent_email|
+  class_group.students.create(first_name: first, last_name: last, parent_email: parent_email)
 end

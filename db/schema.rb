@@ -11,31 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205204956) do
+ActiveRecord::Schema.define(version: 20151209003851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "reports", force: :cascade do |t|
+  create_table "class_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "teacher_id"
+  end
+
+  create_table "class_groups_students", id: false, force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "class_group_id"
+  end
+
+  create_table "daily_reports", force: :cascade do |t|
+    t.integer  "daily_report_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "daily_summaries", force: :cascade do |t|
+    t.integer  "class_group_id"
     t.datetime "date"
-    t.string   "daily_summary"
-    t.string   "comments"
+    t.string   "text"
     t.string   "homework"
-    t.string   "color"
-    t.string   "status"
-    t.integer  "student_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "teacher_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string  "color"
+    t.string  "status"
+    t.string  "comment"
+    t.integer "student_id"
+    t.integer "daily_report_id"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "parent_email"
-    t.integer  "teacher_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "parent_email"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -51,8 +66,6 @@ ActiveRecord::Schema.define(version: 20151205204956) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
   end
 
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
