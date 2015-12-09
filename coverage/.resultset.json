@@ -548,11 +548,7 @@
         1,
         null,
         1,
-        1,
-        1,
         null,
-        1,
-        0,
         null,
         null
       ],
@@ -586,6 +582,20 @@
         1,
         null
       ],
+      "/Users/austinkincaid/Desktop/HackPDX_projectGYR/spec/models/class_group_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
+      "/Users/austinkincaid/Desktop/HackPDX_projectGYR/app/models/class_group.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/austinkincaid/Desktop/HackPDX_projectGYR/spec/models/report_spec.rb": [
         1,
         null,
@@ -603,10 +613,17 @@
         1,
         null,
         1,
-        1,
+        2,
+        2,
+        2,
+        2,
+        2,
         null
       ],
       "/Users/austinkincaid/Desktop/HackPDX_projectGYR/app/models/student.rb": [
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -620,10 +637,10 @@
         1,
         null,
         1,
-        1,
+        2,
         null
       ]
     },
-    "timestamp": 1449686827
+    "timestamp": 1449688227
   }
 }
