@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-09T11:34:45-08:00">2015-12-09T11:34:45-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-09T11:43:32-08:00">2015-12-09T11:43:32-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.12%</span></span>
+    (<span class="covered_percent"><span class="green">94.87%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>31</b> files in total.
-    <b>153</b> relevant lines. 
-    <span class="green"><b>144</b> lines covered</span> and
-    <span class="red"><b>9</b> lines missed </span>
+    <b>156</b> relevant lines. 
+    <span class="green"><b>148</b> lines covered</span> and
+    <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -122,12 +122,12 @@
       
       <tr>
         <td class="strong"><a href="#eb313253ec64c70dcb0634a350495c34f9632493" class="src_link" title="app/models/student.rb">app/models/student.rb</a></td>
-        <td class="yellow strong">87.5 %</td>
+        <td class="green strong">100.0 %</td>
         <td>11</td>
         <td>8</td>
-        <td>7</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td>8</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -333,11 +333,11 @@
       <tr>
         <td class="strong"><a href="#78ef36de63681956f98beeca93b52116e8266dac" class="src_link" title="spec/models/student_spec.rb">spec/models/student_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>7</td>
-        <td>7</td>
+        <td>13</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -781,11 +781,11 @@
         <div class="source_table" id="eb313253ec64c70dcb0634a350495c34f9632493">
   <div class="header">
     <h3>app/models/student.rb</h3>
-    <h4><span class="yellow">87.5 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>8</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -840,8 +840,8 @@
           <code class="ruby">  def full_name</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">    return self.first_name + &quot; &quot; + self.last_name</code>
         </li>
@@ -4119,8 +4119,8 @@
     <h3>spec/models/student_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4176,7 +4176,31 @@
           <code class="ruby">  it { should validate_presence_of :parent_email }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;returns a Student&#39;s full name&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    student = Student.create(first_name: &quot;Steve&quot;, last_name: &quot;Ballmain&quot;, parent_email: &quot;bal@main.gov&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(student.full_name).to eq &#39;Steve Ballmain&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>

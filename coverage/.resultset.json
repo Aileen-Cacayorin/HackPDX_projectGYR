@@ -658,6 +658,10 @@
         2,
         2,
         2,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/austinkincaid/Desktop/HackPDX_projectGYR/app/models/student.rb": [
@@ -669,7 +673,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null
       ],
@@ -681,6 +685,6 @@
         null
       ]
     },
-    "timestamp": 1449689685
+    "timestamp": 1449690212
   }
 }
