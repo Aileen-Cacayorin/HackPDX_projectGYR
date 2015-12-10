@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 20151209003851) do
     t.integer "class_group_id"
   end
 
-  create_table "daily_reports", force: :cascade do |t|
-    t.integer  "daily_summary_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "daily_summaries", force: :cascade do |t|
     t.integer  "class_group_id"
     t.datetime "date"
@@ -44,7 +38,7 @@ ActiveRecord::Schema.define(version: 20151209003851) do
     t.string  "status"
     t.string  "comment"
     t.integer "student_id"
-    t.integer "daily_report_id"
+    t.integer "daily_summary_id"
   end
 
   create_table "students", force: :cascade do |t|

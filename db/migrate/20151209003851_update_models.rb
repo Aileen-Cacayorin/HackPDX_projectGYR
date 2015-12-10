@@ -48,17 +48,12 @@ class UpdateModels < ActiveRecord::Migration
       t.string :homework
     end
 
-    create_table :daily_reports do |t|
-      t.integer :daily_summary_id
-      t.timestamps null: false
-    end
-
     create_table :reports do |t|
       t.string :color
       t.string :status
       t.string :comment
       t.integer :student_id
-      t.integer :daily_report_id
+      t.integer :daily_summary_id
     end
 
     create_table :students do |t|

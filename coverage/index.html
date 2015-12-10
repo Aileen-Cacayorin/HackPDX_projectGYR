@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-09T20:01:19-08:00">2015-12-09T20:01:19-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-10T12:12:52-08:00">2015-12-10T12:12:52-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.9%</span></span>
+    (<span class="covered_percent"><span class="green">94.67%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.1
+         1.08
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>31</b> files in total.
-    <b>157</b> relevant lines. 
-    <span class="green"><b>149</b> lines covered</span> and
+    <b>29</b> files in total.
+    <b>150</b> relevant lines. 
+    <span class="green"><b>142</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -82,16 +82,6 @@
       
       <tr>
         <td class="strong"><a href="#836d06f6b8585725b2f9023a1e9a4ed4d26ed191" class="src_link" title="app/models/class_group.rb">app/models/class_group.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>4</td>
-        <td>4</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#04fbffac989908e590cf8817391936eeb0fd8f71" class="src_link" title="app/models/daily_report.rb">app/models/daily_report.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>5</td>
         <td>4</td>
@@ -273,9 +263,9 @@
       <tr>
         <td class="strong"><a href="#021dc0a354d2329b53ec4a765e595ac2aee82bb3" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>7</td>
-        <td>7</td>
+        <td>17</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -292,16 +282,6 @@
       
       <tr>
         <td class="strong"><a href="#9e997100a0817e2ce171c5ded2001a438819db1b" class="src_link" title="spec/models/class_group_spec.rb">spec/models/class_group_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>7</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.6</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#0dad2e7eb4e9aca17a8214ecda8994f636fd7d88" class="src_link" title="spec/models/daily_report_spec.rb">spec/models/daily_report_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>7</td>
         <td>5</td>
@@ -622,54 +602,6 @@
   </pre>
 </div>
       
-        <div class="source_table" id="04fbffac989908e590cf8817391936eeb0fd8f71">
-  <div class="header">
-    <h3>app/models/daily_report.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class DailyReport &lt; ActiveRecord::Base</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  belongs_to :daily_summary</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :reports</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  accepts_nested_attributes_for :reports</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
         <div class="source_table" id="a292e7b09430f2aa804651e8e30cfa04a9f98688">
   <div class="header">
     <h3>app/models/daily_summary.rb</h3>
@@ -699,7 +631,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_one :daily_report</code>
+          <code class="ruby">  has_many :reports</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
@@ -717,7 +649,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  accepts_nested_attributes_for :daily_report</code>
+          <code class="ruby">  accepts_nested_attributes_for :reports</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -759,7 +691,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  belongs_to :daily_report</code>
+          <code class="ruby">  belongs_to :daily_summary</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
@@ -3627,8 +3559,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3705,10 +3637,34 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
+          <code class="ruby">  resources :daily_summaries do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    resources :daily_reports</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
           <code class="ruby">  root to: &quot;class_groups#index&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
@@ -3904,66 +3860,6 @@
   </pre>
 </div>
       
-        <div class="source_table" id="0dad2e7eb4e9aca17a8214ecda8994f636fd7d88">
-  <div class="header">
-    <h3>spec/models/daily_report_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe DailyReport, type: :model do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  it { should belong_to :daily_summary }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  it { should have_many :reports }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  it { should accept_nested_attributes_for :reports}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
         <div class="source_table" id="6800023bcbab2b0b86c7e2d1a0557a9ea17c638a">
   <div class="header">
     <h3>spec/models/daily_summary_spec.rb</h3>
@@ -4005,7 +3901,7 @@
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should have_one :daily_report }</code>
+          <code class="ruby">  it { should have_many :reports }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
@@ -4023,7 +3919,7 @@
         <li class="covered" data-hits="2" data-linenumber="8">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should accept_nested_attributes_for :daily_report}</code>
+          <code class="ruby">  it { should accept_nested_attributes_for :reports}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -4077,7 +3973,7 @@
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should belong_to :daily_report }</code>
+          <code class="ruby">  it { should belong_to :daily_summary }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
