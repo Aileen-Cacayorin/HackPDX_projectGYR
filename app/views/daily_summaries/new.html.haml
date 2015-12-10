@@ -9,23 +9,22 @@
       = ds.text_area :text, autofocus: true, class: 'form-control'
     .form_group
       = ds.label :homework, "Tonight's homework"
-      = ds.text_area :text, class: 'form-control'
+      = ds.text_area :homework, class: 'form-control'
     %hr
-    = ds.fields_for :daily_report do |dr|
-      = dr.fields_for :reports do |r|
-        .col-lg-3.col-md-3.col-sm-3.col-xs-3
-          %h4= r.object.student.full_name
-        .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
-          = r.label :color, "Color"
-          = r.radio_button :color, "green", checked: true
-          = r.radio_button :color, "yellow"
-          = r.radio_button :color, "red"
-        .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
-          = r.label :status, "Status"
-          = r.radio_button :status, "nil", checked: true
-          = r.radio_button :status, "tardy"
-          = r.radio_button :status, "absent"
-        .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
-          = r.text_area :comment, class: 'form-control'
+    = ds.fields_for :reports do |r|
+      .col-lg-3.col-md-3.col-sm-3.col-xs-3
+        %h4= r.object.student.full_name
+      .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
+        = r.label :color, "Color"
+        = r.radio_button :color, "green", checked: true
+        = r.radio_button :color, "yellow"
+        = r.radio_button :color, "red"
+      .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
+        = r.label :status, "Status"
+        = r.radio_button :status, "nil", checked: true
+        = r.radio_button :status, "tardy"
+        = r.radio_button :status, "absent"
+      .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
+        = r.text_area :comment, class: 'form-control'
     .text-center
       = ds.submit "Save", class: "btn btn-warning"

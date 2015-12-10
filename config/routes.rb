@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :daily_summaries do
-    resources :daily_reports
+    resources :reports
   end
 
   root to: "class_groups#index"
