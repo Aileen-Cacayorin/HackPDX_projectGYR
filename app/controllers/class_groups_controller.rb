@@ -10,7 +10,9 @@ class ClassGroupsController < ApplicationController
     @teacher = current_teacher
     @class_group = ClassGroup.find(params[:id])
     @daily_summary = @class_group.daily_summaries.new
-    daily_report = @daily_summary.build_daily_report
-    @class_group.students.count.times { daily_report.reports.build }
+    @daily_report = @daily_summary.build_daily_report
+    @class_group.students.each do |student|
+      @daily_report.reports.build(student_id: student.id)
+    end
   end
 end
