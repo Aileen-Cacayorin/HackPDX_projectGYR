@@ -3,15 +3,15 @@
   .panel.panel-default
     .panel-heading
       %h3.panel-title Classes
-    .list_group
+    .list-group
       - @class_groups.each do |class_group|
-        =link_to new_class_group_daily_summary_path(class_group) do
+        =link_to teacher_class_group_path(@teacher, class_group) do
           .list-group-item
             %ul.list-inline
               .row
                 %li.col-xs-4.col-sm-4.col-md-4.col-lg-4
                   #{class_group.name}
-                %lili.col-xs-4.col-sm-4.col-md-4.col-lg-4
+                %li.col-xs-4.col-sm-4.col-md-4.col-lg-4
                   #{class_group.students.count} Students
                 %li.col-xs-4.col-sm-4.col-md-4.col-lg-4
                   #{class_group.daily_summaries.count} Reports
