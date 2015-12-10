@@ -1,6 +1,6 @@
 .container
   %h1 Class report blast builder
-  = form_for @daily_summary, html: {multipart: true} do |ds|
+  = form_for [@class_group, @daily_summary], html: {multipart: true} do |ds|
     .form_group
       = ds.label :date, "Report Date"
       = ds.date_select :date
@@ -12,6 +12,7 @@
       = ds.text_area :homework, class: 'form-control'
     %hr
     = ds.fields_for :reports do |r|
+      = r.hidden_field :student_id, value: r.object.student.id
       .col-lg-3.col-md-3.col-sm-3.col-xs-3
         %h4= r.object.student.full_name
       .form_group.col-lg-3.col-md-3.col-sm-3.col-xs-3
