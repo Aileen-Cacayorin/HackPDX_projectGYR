@@ -535,10 +535,6 @@
         null,
         null,
         1,
-        null,
-        null,
-        1,
-        null,
         null
       ],
       "/Users/austinkincaid/Desktop/HackPDX_projectGYR/app/models/teacher.rb": [
@@ -621,9 +617,11 @@
         2,
         2,
         2,
+        2,
         null
       ],
       "/Users/austinkincaid/Desktop/HackPDX_projectGYR/app/models/daily_summary.rb": [
+        1,
         1,
         1,
         1,
@@ -685,6 +683,6 @@
         null
       ]
     },
-    "timestamp": 1449690212
+    "timestamp": 1449720079
   }
 }

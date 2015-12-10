@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-09T11:43:32-08:00">2015-12-09T11:43:32-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-12-09T20:01:19-08:00">2015-12-09T20:01:19-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.87%</span></span>
+    (<span class="covered_percent"><span class="green">94.9%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.09
+         1.1
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>31</b> files in total.
-    <b>156</b> relevant lines. 
-    <span class="green"><b>148</b> lines covered</span> and
+    <b>157</b> relevant lines. 
+    <span class="green"><b>149</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -103,9 +103,9 @@
       <tr>
         <td class="strong"><a href="#a292e7b09430f2aa804651e8e30cfa04a9f98688" class="src_link" title="app/models/daily_summary.rb">app/models/daily_summary.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>7</td>
         <td>6</td>
-        <td>5</td>
-        <td>5</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -273,9 +273,9 @@
       <tr>
         <td class="strong"><a href="#021dc0a354d2329b53ec4a765e595ac2aee82bb3" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>17</td>
-        <td>8</td>
-        <td>8</td>
+        <td>13</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -313,9 +313,9 @@
       <tr>
         <td class="strong"><a href="#6800023bcbab2b0b86c7e2d1a0557a9ea17c638a" class="src_link" title="spec/models/daily_summary_spec.rb">spec/models/daily_summary_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>6</td>
-        <td>6</td>
+        <td>9</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.7</td>
       </tr>
@@ -675,8 +675,8 @@
     <h3>app/models/daily_summary.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -714,7 +714,13 @@
           <code class="ruby">  validates_presence_of :text</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  accepts_nested_attributes_for :daily_report</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -3621,8 +3627,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3657,7 +3663,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    resources :students</code>
+          <code class="ruby">    resources :class_groups</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -3675,13 +3681,13 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :teachers, only: [:show] do</code>
+          <code class="ruby">  resources :class_groups do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    resources :reports, only: [:index, :new, :create]</code>
+          <code class="ruby">    resources :daily_summaries</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -3699,34 +3705,10 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :reports</code>
+          <code class="ruby">  root to: &quot;class_groups#index&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  root to: &quot;reports#new&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
@@ -3987,8 +3969,8 @@
     <h3>spec/models/daily_summary_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4038,7 +4020,13 @@
           <code class="ruby">  it { should validate_presence_of :text }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  it { should accept_nested_attributes_for :daily_report}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
