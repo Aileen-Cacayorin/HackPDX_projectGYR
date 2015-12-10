@@ -10,4 +10,8 @@ class DailySummariesController < ApplicationController
       @daily_report.reports.build(student_id: student.id)
     end
   end
+
+  def create
+
+  end
 end
