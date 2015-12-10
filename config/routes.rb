@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     resources :daily_summaries
   end
 
+  resources :daily_summaries do
+    resources :daily_reports
+  end
+
   root to: "class_groups#index"
 end

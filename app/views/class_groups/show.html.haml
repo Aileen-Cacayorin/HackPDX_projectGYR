@@ -1,0 +1,6 @@
+.container
+  %h1 Make a report
+  = form_for @daily_summary, html: {multipart: true} do |f|
+    .form_group
+      = f.label :text, "The Day's Lesson"
+      = f.text_area :text, autofocus: true, class: 'form-control'
