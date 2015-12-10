@@ -6,11 +6,6 @@ class StudentsController < ApplicationController
     @reports = @student.reports
   end
 
-  def index
-    @teacher = current_teacher
-    @students = @teacher.students
-  end
-
   def new
     @teacher = current_teacher
     @student = Student.new

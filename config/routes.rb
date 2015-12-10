@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   resources :class_groups do
     resources :daily_summaries
+    resources :students
   end
 
-  resources :daily_summaries do
+  resources :students do
     resources :reports
   end
 
