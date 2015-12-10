@@ -1,6 +1,12 @@
 .container
-  %h1 Make a report
+  %h1 Class report blast builder
   = form_for @daily_summary, html: {multipart: true} do |f|
     .form_group
-      = f.label :text, "The Day's Lesson"
+      = f.label :date, "Report Date"
+      = f.date_select :date
+    .form_group
+      = f.label :text, "Today's lesson"
       = f.text_area :text, autofocus: true, class: 'form-control'
+    .form_group
+      = f.label :homework, "Tonight's homework"
+      = f.text_area :text, class: 'form-control'
