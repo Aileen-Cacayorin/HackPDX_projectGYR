@@ -6,7 +6,7 @@
       %h3.panel-title Classes
     .list_group
       - @class_groups.each do |class_group|
-        =link_to teacher_class_group_path(current_teacher, class_group) do
+        =link_to new_class_group_daily_summary_path(class_group) do
           .list-group-item
             %ul.list-inline
               .row
